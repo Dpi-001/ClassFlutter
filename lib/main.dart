@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lictproject/NestedContainer.dart';
+import 'package:flutter_lictproject/RowColumneg.dart';
 import 'package:flutter_lictproject/homepage.dart';
 
 void main() {
@@ -17,8 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Nestedcontainer(), //yo line ma garyem class lai call garne
-      //hompage.dart file lai call garyem class
+      home: Rowcolumneg(),
+      //Homepage(), //yo line ma garyem class lai call garne
+      // Nestedcontainer()      hompage.dart file lai call garyem class
     );
   }
 }
