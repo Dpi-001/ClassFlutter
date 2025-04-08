@@ -45,36 +45,39 @@ class Rowcolumneg extends StatelessWidget {
       //  Container inside two column and text betten them and row
       body: Center(
         child: Container(
-        width: 300,
-        height: 300,
-        alignment: Alignment.center,
-        color: Colors.amber,
+          width: 300,
+          height: 300,
+          alignment: Alignment.center,
+          color: Colors.amber,
 
-        padding: EdgeInsets.only(top: 50, left: 50, right: 50, bottom: 50),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
+          padding: EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 50),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
 
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(width: 100, height: 50, color: Colors.blue),
-                Text("This is column", style: TextStyle(fontSize: 12)),
-                Container(width: 100, height: 50, color: Colors.blue),
-              ],
-            ),
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Container(width: 100, height: 50, color: Colors.blue),
+                  Text("This is column", style: TextStyle(fontSize: 20)),
+                  Container(width: 100, height: 50, color: Colors.blue),
+                ],
+              ),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              children: [Container(width: 100, height: 50, color: Colors.red)],
-            ),
-          ],
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Container(width: 100, height: 200, color: Colors.red),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
