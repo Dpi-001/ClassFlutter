@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_lictproject/MobDesgin.dart';
 import 'package:flutter_lictproject/NestedContainer.dart';
 import 'package:flutter_lictproject/RowColumneg.dart';
+import 'package:flutter_lictproject/counter.dart';
 import 'package:flutter_lictproject/homepage.dart';
 import 'package:flutter_lictproject/image.dart';
 
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Mobdesgin(),
+      home: CounterApp(),
+      // Mobdesgin(),
 
       // IMageA(), //yo line ma garyem class lai call garne
       // Rowcolumneg(),
