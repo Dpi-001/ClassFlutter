@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lictproject/Bmi.dart';
 import 'package:flutter_lictproject/MobDesgin.dart';
 import 'package:flutter_lictproject/NestedContainer.dart';
 import 'package:flutter_lictproject/RowColumneg.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(255, 104, 227, 10),
         ),
       ),
-      home: Mobdesgin(),
+      home: BmiC(), //yo line ma garyem class lai call garne
+      // Mobdesgin(),
       // ButtonExample(),
       // CounterApp(),
       // Mobdesgin(),
