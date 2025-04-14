@@ -22,14 +22,6 @@ class _BmiCState extends State<BmiC> {
       appBar: AppBar(
         title: Text("BMI Calculator"),
         leading: Icon(Icons.arrow_back),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.settings),
-            onPressed: () {
-              // Action when settings icon is pressed
-            },
-          ),
-        ],
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 15, 216, 235),
       ),
