@@ -214,7 +214,10 @@ class Mobdesgin extends StatelessWidget {
                       ],
                     ),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        // Add your add to cart functionality here
+                        print("Add to Cart button pressed");
+                      },
                       child: Text("Add to Cart"),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromARGB(
