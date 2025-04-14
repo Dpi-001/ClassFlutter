@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(255, 104, 227, 10),
         ),
       ),
-      home: SizeboxExample(),
+      home: Mobdesgin(),
       // ButtonExample(),
       // CounterApp(),
       // Mobdesgin(),
