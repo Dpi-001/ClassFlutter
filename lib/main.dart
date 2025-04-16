@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lictproject/Bmi.dart';
+import 'package:flutter_lictproject/Calculator.dart';
 import 'package:flutter_lictproject/MobDesgin.dart';
 import 'package:flutter_lictproject/NestedContainer.dart';
 import 'package:flutter_lictproject/RowColumneg.dart';
 import 'package:flutter_lictproject/button_example.dart';
+import 'package:flutter_lictproject/calcu.dart';
 import 'package:flutter_lictproject/counter.dart';
+import 'package:flutter_lictproject/formexample.dart';
 import 'package:flutter_lictproject/homepage.dart';
 import 'package:flutter_lictproject/image.dart';
 import 'package:flutter_lictproject/sizebox_example.dart';
+import 'package:flutter_lictproject/textfield.dart';
+import 'package:flutter_lictproject/textfieldcalcu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +31,11 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(255, 104, 227, 10),
         ),
       ),
-      home: BmiC(), //yo line ma garyem class lai call garne
+      home: Formexample(),
+      // CalcuText(),
+      // Calceg(),
+      // TextfieldExample(),
+      // BmiC(), //yo line ma garyem class lai call garne
       // Mobdesgin(),
       // ButtonExample(),
       // CounterApp(),
