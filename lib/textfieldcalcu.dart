@@ -7,11 +7,11 @@ class CalcuText extends StatefulWidget {
   State<CalcuText> createState() => _CalcuTextState();
 }
 
-// controller ma .clear vaniii xw haii
 class _CalcuTextState extends State<CalcuText> {
   var num1Controller = TextEditingController();
   var num2Controller = TextEditingController();
   var result = "";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,117 +25,117 @@ class _CalcuTextState extends State<CalcuText> {
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.add_comment))],
         backgroundColor: Colors.white,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-
-        children: [
-          Text(
-            result,
-            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: 50),
-          //refacto with size box
-          SizedBox(
-            width: double.infinity,
-            height: 100,
-            child: TextField(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              result,
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 30),
+            TextField(
               controller: num1Controller,
               decoration: InputDecoration(
-                labelText: "Enter a first Number",
-
+                labelText: "Enter first number",
                 prefixIcon: Icon(Icons.line_weight),
-                suffixIcon: Icon(Icons.one_k),
-                hintText: "Enter a first Number",
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.clear),
+                  onPressed: () => num1Controller.clear(),
+                ),
+                hintText: "Enter first number",
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(color: Colors.grey),
                 ),
-                floatingLabelBehavior: FloatingLabelBehavior.never,
               ),
-
-              maxLength: 10,
               keyboardType: TextInputType.number,
+              maxLength: 10,
             ),
-          ),
-          SizedBox(height: 5),
-          TextField(
-            controller: num2Controller,
-            decoration: InputDecoration(
-              labelText: "Enter a second Number",
-
-              prefixIcon: Icon(Icons.line_weight),
-              suffixIcon: Icon(Icons.two_k),
-              hintText: "Enter a second Number",
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(color: Colors.grey),
-              ),
-              floatingLabelBehavior: FloatingLabelBehavior.never,
-            ),
-
-            maxLength: 10,
-            keyboardType: TextInputType.number,
-          ),
-          SizedBox(height: 5),
-
-          SizedBox(height: 20),
-
-          Padding(
-            padding: const EdgeInsets.only(left: 60, right: 40),
-
-            child: Row(
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    var num1 = num1Controller.text;
-                    var num2 = num2Controller.text;
-                    if (num1 != "" || num2 != "") {
-                      var result = int.parse(num1) + int.parse(num2);
-                    }
-                    // setState(() {
-                    //     result = "$msg \n\n BMI is ${bmi.toStringAsFixed(2)}";
-                    //   });
-
-                    setState(() {
-                      result = "${int.parse(num1) + int.parse(num2)}";
-                    });
-                    // Perform calculation here
-                  },
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.add),
-                      SizedBox(width: 5),
-                      Text("Calculate"),
-                    ],
-                  ),
+            SizedBox(height: 10),
+            TextField(
+              controller: num2Controller,
+              decoration: InputDecoration(
+                labelText: "Enter second number",
+                prefixIcon: Icon(Icons.line_weight),
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.clear),
+                  onPressed: () => num2Controller.clear(),
                 ),
-                SizedBox(width: 10),
-                ElevatedButton(
+                hintText: "Enter second number",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              keyboardType: TextInputType.number,
+              maxLength: 10,
+            ),
+            SizedBox(height: 20),
+            Wrap(
+              spacing: 10,
+              children: [
+                ElevatedButton.icon(
                   onPressed: () {
-                    var num1 = num1Controller.text;
-                    var num2 = num2Controller.text;
-                    if (num1 != "" || num2 != "") {
-                      var result = int.parse(num1) - int.parse(num2);
+                    var num1 = int.tryParse(num1Controller.text);
+                    var num2 = int.tryParse(num2Controller.text);
+                    if (num1 != null && num2 != null) {
+                      setState(() {
+                        result = "${num1 + num2}";
+                      });
                     }
-                    setState(() {
-                      result = " ${int.parse(num1) - int.parse(num2)}";
-                    });
-                    // Perform calculation here
                   },
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.remove),
-                      SizedBox(width: 5),
-                      Text("Calculate"),
-                    ],
-                  ),
+                  icon: Icon(Icons.add),
+                  label: Text("Add"),
+                ),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    var num1 = int.tryParse(num1Controller.text);
+                    var num2 = int.tryParse(num2Controller.text);
+                    if (num1 != null && num2 != null) {
+                      setState(() {
+                        result = "${num1 - num2}";
+                      });
+                    }
+                  },
+                  icon: Icon(Icons.remove),
+                  label: Text("Subtract"),
+                ),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    var num1 = int.tryParse(num1Controller.text);
+                    var num2 = int.tryParse(num2Controller.text);
+                    if (num1 != null && num2 != null) {
+                      setState(() {
+                        result = "${num1 * num2}";
+                      });
+                    }
+                  },
+                  icon: Icon(Icons.close),
+                  label: Text("Multiply"),
+                ),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    var num1 = double.tryParse(num1Controller.text);
+                    var num2 = double.tryParse(num2Controller.text);
+                    if (num1 != null && num2 != null) {
+                      if (num2 == 0) {
+                        setState(() {
+                          result = "Cannot divide by zero";
+                        });
+                      } else {
+                        setState(() {
+                          result = (num1 / num2).toStringAsFixed(2);
+                        });
+                      }
+                    }
+                  },
+                  icon: Icon(Icons.percent),
+                  label: Text("Divide"),
                 ),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
