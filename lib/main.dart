@@ -13,6 +13,7 @@ import 'package:flutter_lictproject/image.dart';
 import 'package:flutter_lictproject/sizebox_example.dart';
 import 'package:flutter_lictproject/textfield.dart';
 import 'package:flutter_lictproject/textfieldcalcu.dart';
+import 'package:flutter_lictproject/textfieldform.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,8 +32,9 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(255, 104, 227, 10),
         ),
       ),
-      home: Formexample(),
-      // CalcuText(),
+      home:
+          // Formexample(),
+          CalcuTextForm(),
       // Calceg(),
       // TextfieldExample(),
       // BmiC(), //yo line ma garyem class lai call garne
