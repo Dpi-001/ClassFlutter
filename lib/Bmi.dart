@@ -64,6 +64,7 @@ class _BmiCState extends State<BmiC> {
 
                 SizedBox(height: 20),
                 TextField(
+
                   controller: ftController,
                   decoration: InputDecoration(
                     labelText: 'Enter your height (ft)',
