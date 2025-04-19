@@ -1,4 +1,4 @@
-# flutter_lictproject
+# flutter_lictprojects
 
 A new Flutter project.
 
