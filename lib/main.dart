@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lictproject/app_route.dart';
 // import 'package:flutter_lictproject/Bmi.dart';
 // import 'package:flutter_lictproject/Calculator.dart';
 // import 'package:flutter_lictproject/Desgin2.dart';
 import 'package:flutter_lictproject/arrayfruit.dart';
+import 'package:flutter_lictproject/named_navigate/named_first_screen.dart';
+import 'package:flutter_lictproject/named_navigate/named_second.dart';
 // import 'package:flutter_lictproject/first_screen.dart';
 // import 'package:flutter_lictproject/listview_builder.dart';
 // // import 'package:flutter_lictproject/MobDesgin.dart';
@@ -36,7 +39,13 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(255, 104, 227, 10),
         ),
       ),
-      home: Fruitarrayeg(),
+      home: NamedFirstScreen(),
+
+      // Fruitarrayeg(),
+      routes: {
+        AppRoutes.firstScreen: (ctx) => NamedFirstScreen(),
+        AppRoutes.secondScreen: (ctx) => NamedSecondScreen(),
+      },
       //  FirstScreen(),
       // CustomListView(),
       // Desgin2M(),
